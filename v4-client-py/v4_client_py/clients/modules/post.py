@@ -44,7 +44,12 @@ class Post:
 
         wallet = subaccount.wallet
         network = NetworkConfig.fetchai_network_config(
-            chain_id=self.config.chain_id, url_prefix=self.config.url_prefix, url=self.config.url
+            chain_id=self.config.chain_id,
+            url='grpc+https://dydx-ops-grpc.kingnodes.com:443',
+            fee_minimum_gas_price=0,
+            fee_denomination="adydx",
+            staking_denomination="adydx",
+            faucet_url=None
         )
         ledger = LedgerClient(network)
 
