@@ -43,7 +43,7 @@ class Post:
         """
 
         wallet = subaccount.wallet
-        network = NetworkConfig.fetchai_network_config(
+        network = NetworkConfig(
             chain_id=self.config.chain_id,
             url='grpc+https://dydx-ops-grpc.kingnodes.com:443',
             fee_minimum_gas_price=0,
